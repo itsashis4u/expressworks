@@ -14,3 +14,11 @@ var Schema = mongoose.Schema({
 
 var userData = mongoose.model('User', Schema);
 
+var person_data = {
+    username: "some data",
+    FullName: "some data"
+};
+
+var person = new userData(person_data);
+
+person.save();
