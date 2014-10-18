@@ -16,6 +16,7 @@ app.listen(port);
 console.log("Listening at http://localhost:" + port);
 
 
-app.post('/', function(req, res, next){
-	
+app.post('/new', function(req, res){
+	var from = req.params;
+	console.log(from);
 });
