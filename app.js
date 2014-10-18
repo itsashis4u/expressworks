@@ -6,10 +6,8 @@ app.get('/', function(req, res) {
     res.end('Hello World!')
 })
 
-var port = 9000;
+var port = process.argv[2] || 9000;
 
-app.listen(process.argv[2] || port);
-if (process.argv[2] === undefined)
-    console.log("Listening at http://localhost:" + port);
-else
-    console.log("Listening at http://localhost:" + process.argv[2]);
+app.listen(port);
+
+console.log("Listening at http://localhost:" + port);
