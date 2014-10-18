@@ -14,3 +14,8 @@ var port = process.argv[2] || 9000;
 app.listen(port);
 
 console.log("Listening at http://localhost:" + port);
+
+
+app.post('/', function(req, res, next){
+	
+});
