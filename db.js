@@ -1,5 +1,15 @@
 var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
 
-var Schema = mongooose.Schema;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+  console.log("Success");
+});
 
-var userData
+var Schema = mongoose.Schema({
+	username : String,
+	FullName : String
+});
+
+var userData = mongoose.model('User', Schema);
